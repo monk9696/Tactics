@@ -9,9 +9,15 @@ public class Node {
 	private ArrayList<Node> adjacent;
 	private int depth;
 	
+	public Node() {
+		depth = 0;
+		x=0;
+		y=0;
+		adjacent = new ArrayList<Node>();
+	}
 	
 	public Node(int y, int x){
-		depth = 5;
+		depth = 0;
 		this.x = x;
 		this.y = y;
 		adjacent = new ArrayList<Node>();

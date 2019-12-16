@@ -7,8 +7,8 @@ public class MapRunner {
 	public static void main(String[] args) {
 		Map m = new Map();
 		m.printMap();
-		m.printRange();
-
+	//	m.printRange();
+	//	m.printMap();
 	}
 
 }
