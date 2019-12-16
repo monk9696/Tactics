@@ -17,7 +17,7 @@ public class Node {
 	}
 	
 	public Node(int y, int x){
-		depth = 0;
+		depth = 5;
 		this.x = x;
 		this.y = y;
 		adjacent = new ArrayList<Node>();

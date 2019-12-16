@@ -31,11 +31,11 @@ public class Map {
 	public void setMap() {
 		for(int y = 0; y < map.length; y++){
 			for(int x = 0; x < map[y].length; x++){
-				map[y][x] = generateTile(y,x);
+				map[y][x] = new Node(y,x);
 			}
 		}
-		map[0][0] = new Node(0,0,5);
-		map[0][4] = new Node(0,4,8);
+		map[0][0] = new Node(0,0,1);
+		map[0][4] = new Node(0,4,1);
 		map[4][0] = new Node(4,0,8);
 		map[4][4] = new Node(4,4,8);
 	}
@@ -66,10 +66,10 @@ public class Map {
 		map[yMid][xMid].setDepth((map[yMin][xMin].getDepth() + map[yMax][xMin].getDepth() + 
 				map[yMin][xMax].getDepth() + map[yMax][xMax].getDepth())/4);
 		
-		map[(yMin)][xMid].setDepth((map[yMid][xMid].getDepth() + 
+		map[yMin][xMid].setDepth((map[yMid][xMid].getDepth() + 
 				map[yMin][xMin].getDepth() + map[yMin][xMax].getDepth())/3);
 
-		map[(yMax)][xMid].setDepth((map[yMid][xMid].getDepth() + 
+		map[yMax][xMid].setDepth((map[yMid][xMid].getDepth() + 
 				map[yMax][xMin].getDepth() + map[yMax][xMax].getDepth())/3);
 		
 		map[yMid][xMin].setDepth((map[yMid][xMid].getDepth() + 
@@ -93,7 +93,7 @@ public class Map {
 		int p = 1;
 		int tempo;
 			
-		return new Node(y,x);/*
+		
 		if(y > 0 && x > 0){
 			int tempx = map[y][x-1].getDepth();
 			int tempy = map[y-1][x].getDepth();
@@ -112,7 +112,7 @@ public class Map {
 			return new Node(y,x,temp+tempo-p);
 		}else{
 			return new Node(y,x);
-		}*/
+		}
 	}
 	
 	public void linkMap() {
